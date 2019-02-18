@@ -1,0 +1,25 @@
+.search-bar {
+	width: 800px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.brand {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.logo {
+	border-right: 1px solid lightgray;
+}
+h1 {
+	padding-left: 15px;
+}
+
+.search-nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
