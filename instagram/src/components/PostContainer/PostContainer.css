@@ -4,6 +4,18 @@
 	width: 640px;
 }
 
+.likes- {
+	padding-left: 3%;
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+
+.likes- img {
+	height: 20px;
+	padding-top: 5px;
+	padding-right: 15px;
+}
+
 .post-header {
 	height: 30px;
 	display: flex;

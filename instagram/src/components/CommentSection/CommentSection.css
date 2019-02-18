@@ -1,5 +1,5 @@
 .comment-container p {
-	padding: 0 10px;
+	padding: 0 3%;
 	font-size: 0.8rem;
 }
 .comment-container span {
@@ -7,6 +7,13 @@
 	font-weight: bold;
 }
 form {
-	width: 90%;
+	display: flex;
+	justify-content: center;
+}
+.comment-input {
+	width: 95%;
+	border: 0;
 	border-top: 1px solid lightgray;
+	padding: 15px 0;
+	text-align: start;
 }

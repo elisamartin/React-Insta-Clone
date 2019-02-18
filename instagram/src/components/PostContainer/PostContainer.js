@@ -12,7 +12,11 @@ const PostContainer = (props) => {
 				<p>{username}</p>
 			</div>
 			<img src={imageUrl} alt="Post" />
-			<p>{likes} likes</p>
+			<div className="likes-">
+				<img src="https://image.flaticon.com/icons/svg/159/159774.svg" alt="Heart" />
+				<img src="https://image.flaticon.com/icons/svg/134/134783.svg" alt="Comment" />
+				<p>{likes} likes</p>
+			</div>
 			<CommentSection comments={comments} likes={likes} userProfile={props.userProfile} />
 		</div>
 	);

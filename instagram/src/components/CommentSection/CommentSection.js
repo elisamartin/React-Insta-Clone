@@ -10,7 +10,7 @@ const CommentSection = (props) => {
 				return <Comment key={comment.text} username={comment.username} text={comment.text} />;
 			})}
 			<form>
-				<input type="text" name="addAComment" placeholder="Add a comment..." />
+				<input className="comment-input" type="text" name="addAComment" placeholder="Add a comment..." />
 			</form>
 		</div>
 	);

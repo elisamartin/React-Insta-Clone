@@ -4,6 +4,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	padding: 20px 0;
 }
 .brand {
 	display: flex;
@@ -11,15 +12,33 @@
 	justify-content: space-between;
 	align-items: center;
 }
-.logo {
+
+.brand img {
+	height: 38px;
+	padding: 10px;
+}
+
+.logo img {
+	height: 25px;
+	padding: 10px;
 	border-right: 1px solid lightgray;
 }
-h1 {
-	padding-left: 15px;
+
+input {
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	font-size: 0.7rem;
+	padding: 5px;
+	text-align: center;
 }
 
 .search-nav {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+}
+
+.search-nav img {
+	height: 20px;
+	padding: 10px;
 }
