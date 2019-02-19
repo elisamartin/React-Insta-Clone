@@ -13,7 +13,17 @@ const SearchBar = (props) => {
 					alt="Logo-lettering"
 				/>
 			</div>
-			<input placeholder="&#128269; Search" />
+
+			<form>
+				<input
+					type="text"
+					name="searchText"
+					placeholder="&#128269; Search"
+					value={props.search}
+					onChange={props.handleSearch}
+				/>
+			</form>
+
 			<div className="search-nav">
 				<img src="https://image.flaticon.com/icons/svg/174/174109.svg" alt="Explore" />
 				<img src="https://image.flaticon.com/icons/svg/159/159774.svg" alt="Heart" />
