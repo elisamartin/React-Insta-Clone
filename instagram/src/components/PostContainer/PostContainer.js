@@ -3,24 +3,43 @@ import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
 import './PostContainer.css';
 
-const PostContainer = (props) => {
-	const { username, thumbnailUrl, imageUrl, likes, comments } = props.post;
-	return (
-		<div className="post-container">
-			<div className="post-header">
-				<img src={thumbnailUrl} alt="Profile pic" />
-				<p>{username}</p>
+class PostContainer extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			likes: this.props.post.likes
+		};
+	}
+
+	addLikes = () => {
+		this.setState({
+			likes: this.state.likes + 1
+		});
+	};
+
+	render() {
+		const { username, thumbnailUrl, imageUrl, comments } = this.props.post;
+		return (
+			<div className="post-container">
+				<div className="post-header">
+					<img src={thumbnailUrl} alt="Profile pic" />
+					<p>{username}</p>
+				</div>
+				<img src={imageUrl} alt="Post" />
+				<div className="likes-">
+					<img
+						src="https://image.flaticon.com/icons/svg/159/159774.svg"
+						alt="Heart"
+						onClick={this.addLikes}
+					/>
+					<img src="https://image.flaticon.com/icons/svg/134/134783.svg" alt="Comment" />
+					<p>{this.state.likes} likes</p>
+				</div>
+				<CommentSection comments={comments} userProfile={this.props.userProfile} />
 			</div>
-			<img src={imageUrl} alt="Post" />
-			<div className="likes-">
-				<img src="https://image.flaticon.com/icons/svg/159/159774.svg" alt="Heart" />
-				<img src="https://image.flaticon.com/icons/svg/134/134783.svg" alt="Comment" />
-				<p>{likes} likes</p>
-			</div>
-			<CommentSection comments={comments} likes={likes} userProfile={props.userProfile} />
-		</div>
-	);
-};
+		);
+	}
+}
 
 PostContainer.propTypes = {
 	username: PropTypes.string,

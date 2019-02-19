@@ -15,7 +15,9 @@ class CommentSection extends React.Component {
 	componentDidMount() {
 		this.setState({
 			comments: this.props.comments,
-			currentComment: ''
+			currentComment: '',
+			likes: this.props.likes,
+			isLiked: true
 		});
 	}
 
@@ -25,6 +27,7 @@ class CommentSection extends React.Component {
 			[name]: value
 		});
 	};
+
 	addNewComment = (event) => {
 		event.preventDefault();
 		const newCommentList = [ ...this.state.comments, { username: 'DefaultUser', text: this.state.currentComment } ];
@@ -33,6 +36,7 @@ class CommentSection extends React.Component {
 			currentComment: ''
 		});
 	};
+
 	render() {
 		return (
 			<div>
