@@ -3,24 +3,26 @@ import React, { Component } from 'react';
 class Login extends Component {
 	constructor() {
 		super();
-		this.state = {
-			username: '',
-			password: ''
-		};
+		this.state = {};
 	}
 
-	handleLogIn = (event) => {
-		localStorage.setItem('username', event.target.username.value); // `${this.state.username}`
+	handleChange = (event) => {
+		const { name, value } = event.target;
 		this.setState({
-			username: ''
+			[name]: value
 		});
 	};
+
+	handleLogIn = (event) => {
+		localStorage.setItem('username', `${this.state.username}`);
+	};
+
 	render() {
 		return (
 			<div>
 				<form>
-					<input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
-					<input type="text" name="password" value={this.state.password} onChange={this.handleChange} />
+					<input type="text" placeholder="Username" name="username" value={this.state.username} onChange={this.handleChange} />
+                    <input type="text" placeholder="Password" name="password" value={this.state.password} onChange={this.handleChange} />
 					<button onClick={this.handleLogIn}>Log In</button>
 				</form>
 			</div>

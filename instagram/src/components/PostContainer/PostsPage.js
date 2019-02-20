@@ -29,6 +29,12 @@ class PostsPage extends Component {
 		});
 	};
 
+	logOut = () => {
+		localStorage.clear('username');
+		this.setState({ loggedIn: false });
+		window.location.reload();
+	};
+
 	render() {
 		return (
 			<div className="app-container">
@@ -40,6 +46,7 @@ class PostsPage extends Component {
 				{this.state.posts.map((post, timestamp) => {
 					return <PostContainer key={timestamp} post={post} />;
 				})}
+				<button onClick={this.logOut}>LOG OUT</button>
 			</div>
 		);
 	}
