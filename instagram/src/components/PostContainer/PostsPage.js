@@ -4,7 +4,7 @@ import '../../App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import PostContainer from './PostContainer';
 import dummyData from '../../dummy-data';
-//import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class PostsPage extends Component {
 	constructor() {
