@@ -49,15 +49,7 @@ class PostContainer extends React.Component {
 			src: 'https://image.flaticon.com/icons/svg/149/149217.svg'
 		};
 	}
-
-	/*
-	addLikes = () => {
-		this.setState({
-			likes: this.state.likes + 1
-		});
-	};
-	*/
-
+	
 	toggleLikes = () => {
 		if (!this.state.updated) {
 			this.setState((prevState, props) => {

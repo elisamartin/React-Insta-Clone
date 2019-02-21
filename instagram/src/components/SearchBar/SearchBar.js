@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import './SearchBar.css';
 
 const SearchContainer = styled.div`
 	width: 800px;
