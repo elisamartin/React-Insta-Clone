@@ -45,14 +45,37 @@ class PostContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			likes: this.props.post.likes
+			likes: this.props.post.likes,
+			src: 'https://image.flaticon.com/icons/svg/149/149217.svg'
 		};
 	}
 
+	/*
 	addLikes = () => {
 		this.setState({
 			likes: this.state.likes + 1
 		});
+	};
+	*/
+
+	toggleLikes = () => {
+		if (!this.state.updated) {
+			this.setState((prevState, props) => {
+				return {
+					likes: prevState.likes + 1,
+					updated: true,
+					src: 'https://image.flaticon.com/icons/svg/148/148836.svg'
+				};
+			});
+		} else {
+			this.setState((prevState, props) => {
+				return {
+					likes: prevState.likes - 1,
+					updated: false,
+					src: 'https://image.flaticon.com/icons/svg/149/149217.svg'
+				};
+			});
+		}
 	};
 
 	render() {
@@ -65,11 +88,7 @@ class PostContainer extends React.Component {
 				</PostHeader>
 				<img src={imageUrl} alt="Post" />
 				<LikesContainer>
-					<LikesImg
-						src="https://image.flaticon.com/icons/svg/159/159774.svg"
-						alt="Heart"
-						onClick={this.addLikes}
-					/>
+					<LikesImg src={this.state.src} alt="Heart" onClick={this.toggleLikes} />
 					<LikesImg src="https://image.flaticon.com/icons/svg/134/134783.svg" alt="Comment" />
 					<p>{this.state.likes} likes</p>
 				</LikesContainer>
