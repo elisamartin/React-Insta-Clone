@@ -17,6 +17,14 @@ const CommentInput = styled.input`
 	text-align: start;
 `;
 
+const SubmitButton = styled.button`
+	position: absolute;
+	height: 0px;
+	width: 0px;
+	border: none;
+	padding: 0px;
+`;
+
 class CommentSection extends React.Component {
 	constructor() {
 		super();
@@ -59,7 +67,6 @@ class CommentSection extends React.Component {
 				})}
 				<CommentForm>
 					<CommentInput
-						className="comment-input"
 						type="text"
 						name="currentComment"
 						placeholder="Add a comment..."
@@ -67,7 +74,7 @@ class CommentSection extends React.Component {
 						onChange={this.handleChange}
 						onSubmit={this.addNewComment}
 					/>
-					<button onClick={this.addNewComment}>Submit</button>
+					<SubmitButton onClick={this.addNewComment} />
 				</CommentForm>
 			</div>
 		);
