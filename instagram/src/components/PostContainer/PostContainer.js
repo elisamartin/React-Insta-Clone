@@ -1,7 +1,45 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import './PostContainer.css';
+
+const PostContainerS = styled.div`
+	border: 1px solid lightgray;
+	margin: 20px 0;
+	width: 640px;
+`;
+
+const PostHeader = styled.div`
+	height: 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 15px;
+`;
+
+const PostHeaderImg = styled.img`
+	border-radius: 50%;
+	height: 100%;
+`;
+
+const Username = styled.p`
+	padding-left: 15px;
+	font-size: 1rem;
+	font-weight: bold;
+`;
+
+const LikesContainer = styled.div`
+	padding-left: 3%;
+	font-size: 0.8rem;
+	font-weight: bold;
+`;
+
+const LikesImg = styled.img`
+	height: 20px;
+	padding-top: 5px;
+	padding-right: 15px;
+`;
 
 class PostContainer extends React.Component {
 	constructor(props) {
@@ -20,23 +58,23 @@ class PostContainer extends React.Component {
 	render() {
 		const { username, thumbnailUrl, imageUrl, comments } = this.props.post;
 		return (
-			<div className="post-container">
-				<div className="post-header">
-					<img src={thumbnailUrl} alt="Profile pic" />
-					<p>{username}</p>
-				</div>
+			<PostContainerS>
+				<PostHeader>
+					<PostHeaderImg src={thumbnailUrl} alt="Profile pic" />
+					<Username>{username}</Username>
+				</PostHeader>
 				<img src={imageUrl} alt="Post" />
-				<div className="likes-">
-					<img
+				<LikesContainer>
+					<LikesImg
 						src="https://image.flaticon.com/icons/svg/159/159774.svg"
 						alt="Heart"
 						onClick={this.addLikes}
 					/>
-					<img src="https://image.flaticon.com/icons/svg/134/134783.svg" alt="Comment" />
+					<LikesImg src="https://image.flaticon.com/icons/svg/134/134783.svg" alt="Comment" />
 					<p>{this.state.likes} likes</p>
-				</div>
+				</LikesContainer>
 				<CommentSection comments={comments} userProfile={this.props.userProfile} />
-			</div>
+			</PostContainerS>
 		);
 	}
 }
