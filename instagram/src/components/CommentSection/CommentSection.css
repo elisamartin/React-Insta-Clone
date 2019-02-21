@@ -1,15 +1,19 @@
+/*
 .comment-container p {
 	padding: 0 3%;
 	font-size: 0.8rem;
 }
+
 .comment-container span {
 	padding-right: 5px;
 	font-weight: bold;
 }
+
 form {
 	display: flex;
 	justify-content: center;
 }
+
 .comment-input {
 	width: 95%;
 	border: 0;
@@ -17,3 +21,5 @@ form {
 	padding: 15px 0;
 	text-align: start;
 }
+
+*/

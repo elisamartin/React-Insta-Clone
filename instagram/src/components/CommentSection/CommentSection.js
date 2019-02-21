@@ -1,7 +1,21 @@
 import React from 'react';
 import Comment from './Comment';
 import PropTypes from 'prop-types';
-import './CommentSection.css';
+import styled from 'styled-components';
+// import './CommentSection.css';
+
+const CommentForm = styled.form`
+	display: flex;
+	justify-content: center;
+`;
+
+const CommentInput = styled.input`
+	width: 95%;
+	border: 0;
+	border-top: 1px solid lightgray;
+	padding: 15px 0;
+	text-align: start;
+`;
 
 class CommentSection extends React.Component {
 	constructor() {
@@ -43,8 +57,8 @@ class CommentSection extends React.Component {
 				{this.state.comments.map((comment) => {
 					return <Comment key={comment.text} username={comment.username} text={comment.text} />;
 				})}
-				<form>
-					<input
+				<CommentForm>
+					<CommentInput
 						className="comment-input"
 						type="text"
 						name="currentComment"
@@ -54,27 +68,11 @@ class CommentSection extends React.Component {
 						onSubmit={this.addNewComment}
 					/>
 					<button onClick={this.addNewComment}>Submit</button>
-				</form>
+				</CommentForm>
 			</div>
 		);
 	}
 }
-
-/*
-const CommentSection = (props) => {
-	return (
-		<div>
-			{props.comments.map((comment) => {
-				return <Comment key={comment.text} username={comment.username} text={comment.text} />;
-			})}
-			<form>
-				<input className="comment-input" type="text" name="addAComment" placeholder="Add a comment..." />
-			</form>
-		</div>
-	);
-};
-
-*/
 
 CommentSection.propTypes = {
 	comments: PropTypes.arrayOf(
